@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>John Labis — Graphic Designer</title>
+    <meta name="description" content="Award-winning portfolio of John Labis, Graphic Designer. Immersive visuals, advanced animations, and editorial typography." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Variable fonts: modern sans + editorial serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <!-- GSAP + ScrollTrigger (pinned versions) -->
+    <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js" defer></script>
+    <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js" defer></script>
+    <!-- Lenis smooth scroll (pinned) -->
+    <script src="https://unpkg.com/@studio-freight/lenis@0.2.31/bundled/lenis.min.js" defer></script>
+  </head>
+  <body>
+    <!-- Custom cursor -->
+    <div class="cursor"><span></span></div>
+
+    <!-- Theme & audio controls -->
+    <div class="ui">
+      <button id="themeToggle" aria-label="Toggle theme" role="switch" aria-checked="true">Theme</button>
+      <button id="audioToggle" aria-label="Toggle audio reactive" role="switch" aria-checked="false">Audio</button>
+    </div>
+
+    <!-- Background canvas (particles / audio reactive) -->
+    <canvas id="bg" aria-hidden="true"></canvas>
+
+    <!-- Hero -->
+    <header class="hero" id="hero">
+      <div class="hero-inner">
+        <h1 class="kinetic">
+          <span class="line">John Labis</span>
+          <span class="line accent">Graphic Designer</span>
+          <span class="line sub">Strategic visuals. Editorial craft. Motion-led identities.</span>
+        </h1>
+        <p class="lede">
+          I design brands that move — typographic systems, visual identities, and interactive experiences
+          that feel inevitable.
+        </p>
+        <div class="cta">
+          <a href="#work" class="btn primary">View selected work</a>
+          <a href="#about" class="btn ghost">About me</a>
+        </div>
+      </div>
+      <div class="hero-parallax">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1518972559570-7cc1309f3222?q=80&w=1600&auto=format&fit=crop" alt="Texture" class="parallax layer l1">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop" alt="Grid" class="parallax layer l2">
+        <svg class="parallax layer l3" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#7C4DFF" />
+              <stop offset="100%" stop-color="#00E5FF" />
+            </linearGradient>
+          </defs>
+          <circle cx="300" cy="300" r="220" fill="url(#grad)"></circle>
+        </svg>
+      </div>
+    </header>
+
+    <!-- Work -->
+    <section class="section work" id="work">
+      <div class="section-header">
+        <h2>Selected work</h2>
+        <p class="section-desc">Identity systems, editorial design, motion, and web art direction.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1520974735194-85e58be2c8c0?q=80&w=1600&auto=format&fit=crop" alt="Brand identity mock" />
+          </div>
+          <div class="card-body">
+            <h3>Helix Labs</h3>
+            <p>Variable-type identity with responsive grid and kinetic logo suite.</p>
+            <div class="tags"><span>Identity</span><span>Type</span><span>Motion</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1600&auto=format&fit=crop" alt="Editorial layout" />
+          </div>
+          <div class="card-body">
+            <h3>Analog Journal</h3>
+            <p>Editorial system blending serif drama with modern rhythm — print + digital.</p>
+            <div class="tags"><span>Editorial</span><span>Typography</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop" alt="Website art direction" />
+          </div>
+          <div class="card-body">
+            <h3>Pulse Studio</h3>
+            <p>Art-directed web experience with scroll-linked narrative and cinematic transitions.</p>
+            <div class="tags"><span>Web</span><span>GSAP</span><span>Art Direction</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1514986888952-8cd320577b68?q=80&w=1600&auto=format&fit=crop" alt="Packaging" />
+          </div>
+          <div class="card-body">
+            <h3>Arc Botanics</h3>
+            <p>Packaging and brand toolkit with color systems, tactile finishes, and motion accents.</p>
+            <div class="tags"><span>Packaging</span><span>Color</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section process" id="process">
+      <div class="section-header">
+        <h2>Process</h2>
+        <p class="section-desc">Strategy first. Craft always. Motion as meaning.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <h4>Discovery</h4>
+          <p>Intent, audience, constraints. Align on narrative and success metrics.</p>
+        </div>
+        <div class="step">
+          <h4>Design systems</h4>
+          <p>Type, grid, color, motion. A toolkit that scales and stays coherent.</p>
+        </div>
+        <div class="step">
+          <h4>Expression</h4>
+          <p>Editorial compositions, identity in motion, prototypes that feel alive.</p>
+        </div>
+        <div class="step">
+          <h4>Delivery</h4>
+          <p>Guidelines, assets, and implementation support — frictionless handoff.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section about" id="about">
+      <div class="section-header">
+        <h2>About John</h2>
+        <p class="section-desc">Designer based in the Philippines, building identities with typographic precision and cinematic motion.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I’m a graphic designer focused on brand systems, editorial craft, and motion-driven interfaces.
+            I work with teams who value clarity, beauty, and brave ideas.
+          </p>
+          <p>
+            My practice blends variable typography, expressive color, and choreographed timing — design that
+            reads, feels, and moves.
+          </p>
+          <div class="stats">
+            <div><span class="num" data-to="8">0</span><span class="label">years</span></div>
+            <div><span class="num" data-to="120">0</span><span class="label">projects</span></div>
+            <div><span class="num" data-to="14">0</span><span class="label">awards</span></div>
+          </div>
+        </div>
+        <div class="about-media">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1600&auto=format&fit=crop" alt="Portrait" class="portrait" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="section-header">
+        <h2>Contact</h2>
+        <p class="section-desc">Open to collaborations, brand systems, editorial design, and motion-led websites.</p>
+      </div>
+      <form class="contact-form" name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required />
+        </label>
+        <label class="wide">
+          <span>Message</span>
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <button type="submit" class="btn primary">Send</button>
+      </form>
+      <div class="links">
+        <a href="#" class="link" aria-label="Dribbble (placeholder)">Dribbble</a>
+        <a href="#" class="link" aria-label="Behance (placeholder)">Behance</a>
+        <a href="#" class="link" aria-label="Instagram (placeholder)">Instagram</a>
+        <a href="mailto:hello@example.com" class="link" aria-label="Email">Email</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© <span id="year"></span> John Labis. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
